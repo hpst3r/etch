@@ -1,22 +1,71 @@
+/* globals
+I use root to hold constants in smaller projects */
 :root {
-    transition: ease all .3s;
+    transition: ease all .5s;
     margin: auto;
+    /* non-mono */
     font-family: Georgia, 'Times New Roman', Times, serif;
+    /* main colors */
+    --text-color-light: #262b2c;
+    --heading-color-light: #131313;
+    --anchor-color: #3391ff;
+    --background-color: 
+    /* global scale */
+    font-size: 1.2rem;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
+html {
+    align-content: center;
+}
+
+/* stuff for the top menu */
+header#banner h2 { display: inline; }
+
+header#banner nav { display: inline-block; }
+
+header#banner nav ul li {
+    color: var(--heading-color-light);
+    display: inline;
+    list-style-type: none;
+    margin: 0 .2rem;
+}
+
+header#banner nav ul li:hover {a:hover { text-decoration: underline; } }
+
+/* traditional html objects */
+
 body {
-    font-size: 1.6rem;
-    color: #313a3d;
+    width: 100%;
+    color: var(--text-color);
     line-height: 1.25;
     overflow-wrap: break-word;
 }
 
 a {
-    color: #454545;
-    font-weight: bold;
+    color: var(--anchor-color);
     text-decoration: none;
 }
 
-a:hover {
-    text-decoration: underline;
+a:hover { text-decoration: underline; }
+
+ul-header { padding: 0; }
+
+li { list-style-type: disc; }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 { color: var(--heading-color); }
+
+p {
+    /*margin: 1rem;*/
+}
+
+code {
+    font-size: .9rem;
+    padding: .2rem 0;
 }

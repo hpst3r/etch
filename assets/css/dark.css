@@ -5,11 +5,21 @@ html {
     scrollbar-color: #6c6c6c #2e2e2e;
 }
 
+:root {
+    --text-color-dark: #ebebeb;
+    --background-color-dark: #181a1b;
+    --code-background-dark: #1b1b1c;
+}
+
 body {
-    color: #ebebeb;
-    background: #121212;
+    color: var(--text-color-dark);
+    background: var(--background-color-dark);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+    background-color: var(--code-background-dark);
 }
 
 header#banner a {

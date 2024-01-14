@@ -1,3 +1,6 @@
+/* this file is from the original hugo/etch template
+kept for whenever I want to add a feature back */
+
 *, *:before, *:after {
     box-sizing: border-box;
 }

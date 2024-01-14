@@ -1,30 +1,53 @@
-@media only screen and (max-width: 330px){
+@media only screen and (min-width: 0px){
     :root {
-        max-width: 100%;
-        font-size: 1.5em;
+        width: 90%;
+    }
+    ul {
+        padding-left: 1rem;
     }
 }
 
-@media only screen and (max-width: 500px){
+@media only screen and (min-width: 400px){
     :root {
-        max-width: 90%;
+        width: 90%;
+    }
+    p {
+        margin: .33rem;
+    }
+    ul {
+        margin-left: 1rem;
     }
 }
 
-@media only screen and (max-width: 1000px){
+@media only screen and (min-width: 500px){
     :root {
-        max-width: 85%;
+        width: 90%;
+    }
+    p {
+        margin: .66rem;
+    }
+    ul {
+        margin-left: 1rem;
     }
 }
 
-@media only screen and (max-width: 1510px){
+@media only screen and (min-width: 600px){
     :root {
-        max-width: 80%;
+        width: 85%;
+    }
+    p {
+        margin: 1rem;
+    }
+}
+
+@media only screen and (min-width: 1000px){
+    :root {
+        width: 80%;
     }
 }
 
 @media only screen and (min-width: 1510px){
     :root {
-        max-width: 75%;
+        width: 75%;
     }
 }
