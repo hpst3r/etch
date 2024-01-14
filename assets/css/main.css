@@ -9,14 +9,13 @@ I use root to hold constants in smaller projects */
     --text-color-light: #262b2c;
     --heading-color-light: #131313;
     --anchor-color: #3391ff;
-    --background-color: 
-    /* global scale */
-    font-size: 1.2rem;
+    --background-color: #d8d8d8;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
 
 html {
+    font-size: 1.25em;
     align-content: center;
 }
 
