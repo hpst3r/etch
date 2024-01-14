@@ -1,0 +1,24 @@
+@media only screen and (max-width: 330px){
+    :root {
+        max-width: 100%;
+        font-size: 1.5em;
+    }
+}
+
+@media only screen and (max-width: 500px){
+    :root {
+        max-width: 90%;
+    }
+}
+
+@media only screen and (max-width: 1000px){
+    :root {
+        max-width: 85%;
+    }
+}
+
+@media only screen and (max-width: 1510px){
+    :root {
+        max-width: 80%;
+    }
+}
