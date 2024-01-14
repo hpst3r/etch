@@ -1,5 +1,4 @@
-/* globals
-I use root to hold constants in smaller projects */
+/* globals & constants */
 :root {
     transition: ease all .5s;
     margin: auto;
@@ -20,21 +19,21 @@ html {
 }
 
 /* stuff for the top menu */
-header#banner h2 { display: inline; }
 
+/* set display property so header objects line up properly (that rhymes!)*/
+header#banner h2 { display: inline; }
 header#banner nav { display: inline-block; }
 
+/* list item settings (the items next to the site name) */
 header#banner nav ul li {
     color: var(--heading-color-light);
     display: inline;
     list-style-type: none;
     margin: 0 .2rem;
 }
-
 header#banner nav ul li:hover {a:hover { text-decoration: underline; } }
 
 /* traditional html objects */
-
 body {
     width: 100%;
     color: var(--text-color);
@@ -59,10 +58,6 @@ h3,
 h4,
 h5,
 h6 { color: var(--heading-color); }
-
-p {
-    /*margin: 1rem;*/
-}
 
 code {
     font-size: .9rem;

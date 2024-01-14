@@ -1,3 +1,4 @@
+/* tiny screens, like the Galaxy Fold */
 @media only screen and (min-width: 0px){
     :root {
         width: 90%;
@@ -7,6 +8,15 @@
     }
 }
 
+/* set font size so a 2 or 3 item main menu all fit
+            in a row on tiny screens */
+@media only screen and (max-width: 330px){
+    html {
+        font-size: 1.00em;
+    }
+}
+
+/* begin to increase margin on body content once we have space */
 @media only screen and (min-width: 400px){
     :root {
         width: 90%;
@@ -19,15 +29,17 @@
     }
 }
 
+/* smooths out transition if the window is rapidly resized */
 @media only screen and (min-width: 500px){
     :root {
-        width: 90%;
+        width: 87.5%;
     }
     p {
         margin: .66rem;
     }
 }
 
+/* small screens */
 @media only screen and (min-width: 600px){
     :root {
         width: 85%;
@@ -37,14 +49,28 @@
     }
 }
 
+@media only screen and (min-width: 800px){
+    :root {
+        width: 82.5%;
+    }
+}
+
+/* half a desktop or medium screens */
 @media only screen and (min-width: 1000px){
     :root {
         width: 80%;
     }
 }
 
-@media only screen and (min-width: 1510px){
+@media only screen and (min-width: 1255px){
     :root {
         width: 75%;
+    }
+}
+
+/* fullscreen on a monitor */
+@media only screen and (min-width: 1510px){
+    :root {
+        width: 70%;
     }
 }
