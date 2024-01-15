@@ -6,28 +6,21 @@ Etch is a simple, responsive theme for [Hugo](https://gohugo.io) with a focus on
 
 ## Features:
 
-* Homepage with list of posts.
-* Support for pages.
-* Responsive design for optimized mobile experience.
-* Syntax highlighting with customizable theme.
-* Dark theme which automatically adjusts based on users' setting ([example](https://github.com/LukasJoswiak/etch/wiki/Dark-mode)).
-* No external dependencies, no JavaScript, no web fonts.
-* Internationalization friendly: use default English translations or create your own
+* Gutted fork of Etch with features tailored specifically for my use, refactored for readability and ease of use
+* Credit for everything that isn't broken goes to the original author [Lukas Joswiak](github.com/LukasJoswiak)
 
 ## Installation
 
-To install `etch`, download the repository into the `themes` folder in the root of your site.
-
+Add the theme:
 ```
-$ git submodule add https://github.com/LukasJoswiak/etch.git themes/etch
+$ git submodule add https://github.com/hpst3r/etch.git themes/etch
 ```
+and add it to hugo.toml or build the site with `-t etch`
 
 Then, use the theme to generate your site.
 
+Hi, future me. Use:
 ```
-$ hugo server -t etch
+$ git submodule update --init --recursive
 ```
-
-Use the [sample configuration](https://github.com/LukasJoswiak/etch/wiki/Configuration#sample-configuration) as a starting point. See the [configuration](https://github.com/LukasJoswiak/etch/wiki/Configuration) page for more info.
-
-Read the [wiki](https://github.com/LukasJoswiak/etch/wiki) to learn about more options.
+to grab the submodule for a new environment.
