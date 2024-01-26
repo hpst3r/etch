@@ -15,7 +15,11 @@
 
 html {
     font-size: 1.25em;
-    align-content: center;
+}
+
+body {
+    margin: 0;
+    padding: 0;
 }
 
 h1 { font-size: 2em; }
