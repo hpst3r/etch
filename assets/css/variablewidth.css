@@ -51,26 +51,26 @@
 
 @media only screen and (min-width: 800px){
     :root {
-        width: 82.5%;
+        width: 80%;
     }
 }
 
 /* half a desktop or medium screens */
 @media only screen and (min-width: 1000px){
     :root {
-        width: 80%;
+        width: 72.5%;
     }
 }
 
 @media only screen and (min-width: 1255px){
     :root {
-        width: 75%;
+        width: 65%;
     }
 }
 
 /* fullscreen on a monitor */
 @media only screen and (min-width: 1510px){
     :root {
-        width: 70%;
+        width: 1000px;
     }
 }

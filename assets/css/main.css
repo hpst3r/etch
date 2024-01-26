@@ -3,7 +3,7 @@
     transition: ease all .5s;
     margin: auto;
     /* non-mono */
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-family: "IBM Plex Sans", sans-serif;
     /* main colors */
     --text-color-light: #262b2c;
     --heading-color-light: #131313;
@@ -17,6 +17,10 @@ html {
     font-size: 1.25em;
     align-content: center;
 }
+
+h1 { font-size: 2em; }
+h2 { font-size: 1.65em; }
+h3 { font-size: 1.4em; font-weight: 600; }
 
 /* stuff for the top menu */
 
@@ -62,4 +66,5 @@ h6 { color: var(--heading-color); }
 code {
     font-size: .9rem;
     padding: .2rem 0;
+    font-family: "IBM Plex Mono", monospace;
 }
