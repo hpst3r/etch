@@ -1,7 +1,7 @@
 /* tiny screens, like the Galaxy Fold */
 @media only screen and (min-width: 0px){
     :root {
-        width: 90%;
+        width: 95%;
     }
     ul {
         padding-left: 1rem;
@@ -10,7 +10,7 @@
 
 /* set font size so a 2 or 3 item main menu all fit
             in a row on tiny screens */
-@media only screen and (max-width: 330px){
+@media only screen and (max-width: 400px){
     html {
         font-size: 1.00em;
     }
@@ -22,7 +22,7 @@
         width: 90%;
     }
     p {
-        margin: .33rem;
+        margin-left: .33rem;
     }
     ul {
         margin-left: 1rem;
@@ -35,7 +35,7 @@
         width: 87.5%;
     }
     p {
-        margin: .66rem;
+        margin-left: .66rem;
     }
 }
 
@@ -45,7 +45,7 @@
         width: 85%;
     }
     p {
-        margin: 1rem;
+        margin-left: 1rem;
     }
 }
 
