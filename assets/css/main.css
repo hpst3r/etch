@@ -67,8 +67,31 @@ h4,
 h5,
 h6 { color: var(--heading-color); }
 
+/* pad top and bottom, adjust font size, add background */
 code {
     font-size: .9rem;
-    padding: .2rem 0;
+    padding:0 .2rem;
     font-family: "IBM Plex Mono", monospace;
+    background-color: #f5f5f5;
+}
+
+/* table margin, for centering, border, and show only one border */
+table, td, th {
+    margin: auto;
+    border: 1px solid;
+    border-collapse: collapse;
+    padding: .2rem;
+}
+
+figure {
+    display: flex;
+    justify-content: center;
+}
+
+img {
+    max-width: 100%;
+    max-height: 100%;
+    margin: auto;
+    padding: .2rem;
+    border-radius: 10px;
 }
