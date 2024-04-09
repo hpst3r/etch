@@ -17,11 +17,6 @@ html {
     font-size: 1.25em;
 }
 
-body {
-    margin: 0;
-    padding: 0;
-}
-
 h1 { font-size: 2em; }
 h2 { font-size: 1.65em; }
 h3 { font-size: 1.4em; font-weight: 600; }
@@ -70,8 +65,7 @@ h6 { color: var(--heading-color); }
 /* pad top and bottom, adjust font size, add background */
 code {
     font-size: .9rem;
-    padding:0 .2rem;
-    font-family: "IBM Plex Mono", monospace;
+    font-family: "Cascadia Mono", "IBM Plex Mono", monospace;
     background-color: #f5f5f5;
 }
 

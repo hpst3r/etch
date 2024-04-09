@@ -8,7 +8,7 @@ html {
 :root {
     --text-color-dark: #ebebeb;
     --background-color-dark: #181a1b;
-    --code-background-dark: #1b1b1c;
+    --code-background-dark: #000000;
 }
 
 body {
