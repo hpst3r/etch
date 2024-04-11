@@ -6,20 +6,16 @@ html {
 }
 
 :root {
-    --text-color-dark: #ebebeb;
-    --background-color-dark: #181a1b;
-    --code-background-dark: #000000;
+    --text-color: #ebebeb;
+    --background-color: #181a1b;
+    --code-background-color: #0b0c0c;
 }
 
 body {
-    color: var(--text-color-dark);
-    background: var(--background-color-dark);
+    color: var(--text-color);
+    background: var(--background-color);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-}
-
-code {
-    background-color: var(--code-background-dark);
 }
 
 header#banner a {
