@@ -9,6 +9,7 @@
     --heading-color-light: #131313;
     --anchor-color: #3391ff;
     --background-color: #d8d8d8;
+    --code-background-color: #f1f1f6;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
