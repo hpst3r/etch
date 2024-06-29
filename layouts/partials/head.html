@@ -13,7 +13,7 @@
 
     {{ $resources = $resources | append (resources.Get "css/main.css") -}}
 
-    {{ $resources = $resources | append (resources.Get "css/variablewidth.css") -}}
+    {{ $resources = $resources | append (resources.Get "css/width.css") -}}
 
     {{ $dark := .Site.Params.dark | default "auto" -}}
     {{ if not (eq $dark "off") -}}
