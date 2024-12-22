@@ -62,6 +62,8 @@
 
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+
+    scrollbar-width: none;
 }
 
 h1 { font-size: 2em; font-weight: 600;}
@@ -99,7 +101,7 @@ main#content header#post-header div {
 
 /* traditional html objects */
 body {
-    width: 100%;
+    max-width: fit-content;
     line-height: var(--body-line-height);
     overflow-wrap: break-word;
 }
@@ -170,6 +172,7 @@ img {
 /* Borders */ .chroma {
     border-top: var(--codeblock-border-width) var(--codeblock-border-style) var(--codeblock-border-color);
     border-bottom: var(--codeblock-border-width) var(--codeblock-border-style) var(--codeblock-border-color);
+    max-width: fit-content;
 }
 /* Background */ .bg, .chroma { background-color:var(--codeblock-background-color) }
 /* LineHighlight */ .chroma .hl { background-color:var(--codeblock-highlight-color) }
