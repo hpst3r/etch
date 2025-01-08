@@ -1,9 +1,6 @@
 {{ if not (eq .Site.Params.dark "on") -}}
 @media (prefers-color-scheme: dark) {
 {{ end -}}
-html {
-    scrollbar-color: #6c6c6c #2e2e2e;
-}
 
 :root {
     --header-banner-name-a-color: var(--dark-header-banner-name-a-color);

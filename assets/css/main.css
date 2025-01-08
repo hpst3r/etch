@@ -135,7 +135,7 @@ code {
 }
 
 .chroma {
-    width: 100%;
+    max-width: 100%;
     padding: var(--codeblock-padding);
     border-radius: var(--codeblock-border-radius);
     text-wrap: balance;
@@ -172,7 +172,6 @@ img {
 /* Borders */ .chroma {
     border-top: var(--codeblock-border-width) var(--codeblock-border-style) var(--codeblock-border-color);
     border-bottom: var(--codeblock-border-width) var(--codeblock-border-style) var(--codeblock-border-color);
-    max-width: fit-content;
 }
 /* Background */ .bg, .chroma { background-color:var(--codeblock-background-color) }
 /* LineHighlight */ .chroma .hl { background-color:var(--codeblock-highlight-color) }
