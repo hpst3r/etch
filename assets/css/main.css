@@ -156,6 +156,7 @@ img, figure {
     justify-content: center;
     padding: .2rem;
     border-radius: .75rem;
+    max-width: 130%;
 }
 
 /* syntax highlighting */
