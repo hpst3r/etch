@@ -1,7 +1,7 @@
 {{ define "main" }}
 <article>
     <header id="post-header">
-        <h1>{{ .Title }}</h1>
+        <h2>{{ .Title }}</h2>
         <div>
         {{- if isset .Params "date" -}}
             {{ if eq .Lastmod .Date }}
