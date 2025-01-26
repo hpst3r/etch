@@ -151,18 +151,11 @@ table, td, th {
     padding: .2rem;
 }
 
-figure {
+img, figure {
     display: flex;
     justify-content: center;
-}
-
-img {
-    max-width: 130%;
-    margin: auto;
-    display: block;
-
     padding: .2rem;
-    border-radius: .2rem;
+    border-radius: .75rem;
 }
 
 /* syntax highlighting */
