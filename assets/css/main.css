@@ -4,7 +4,7 @@
     margin: auto;
     /* non-mono */
     font-family: Inter, Arial, system-ui;
-    font-size: 18px;
+    font-size: 16px;
     --body-line-height: 1.25;
 
     /* mono */
@@ -66,10 +66,17 @@
     scrollbar-width: none;
 }
 
-h1 { font-size: 2em; font-weight: 600;}
-h2 { font-size: 1.65em; font-weight: 600; }
-h3 { font-size: 1.4em; font-weight: 600; }
+h1 { font-size: 2em; font-weight: 500;}
+h2 { font-size: 1.65em; font-weight: 500; }
+h3 { font-size: 1.4em; font-weight: 500; }
 
+h2#posts {
+    margin-bottom: 0;
+}
+
+ul#posts {
+    margin-top: 0;
+}
 /* stuff for the top menu */
 
 /* set display property so header objects line up properly (that rhymes!)*/

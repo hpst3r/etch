@@ -4,15 +4,10 @@
         width: 95%;
     }
     ul {
-        padding-left: 1rem;
+        padding: 0 0.5rem;
     }
-}
-
-/* set font size so a 2 or 3 item main menu all fit
-            in a row on tiny screens */
-@media only screen and (max-width: 400px){
-    html {
-        font-size: 1.00em;
+    p {
+        padding: 0 0.25rem;
     }
 }
 
@@ -21,11 +16,8 @@
     :root {
         width: 90%;
     }
-    p {
-        margin-left: .33rem;
-    }
     ul {
-        margin-left: 1rem;
+        padding: 0 0.75rem;
     }
 }
 
@@ -34,8 +26,8 @@
     :root {
         width: 87.5%;
     }
-    p {
-        margin-left: .66rem;
+    ul {
+        padding: 0 1rem;
     }
 }
 
@@ -44,14 +36,20 @@
     :root {
         width: 85%;
     }
-    p {
-        margin-left: 1rem;
+    ul {
+        padding: 0 1.5rem;
     }
 }
 
 @media only screen and (min-width: 800px){
     :root {
         width: 80%;
+    }
+    ul {
+        padding: 0 1.75rem;
+    }
+    p {
+        padding: 0 0.5rem;
     }
 }
 
