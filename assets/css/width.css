@@ -1,13 +1,11 @@
+ul, p, time.post-header {
+    padding: var(--padding-variable);
+}
 /* tiny screens, like the Galaxy Fold */
 @media only screen and (min-width: 0px){
     :root {
         width: 95%;
-    }
-    ul {
-        padding: 0 0.5rem;
-    }
-    p {
-        padding: 0 0.25rem;
+        --padding-variable: 0 0.5rem;
     }
 }
 
@@ -15,9 +13,7 @@
 @media only screen and (min-width: 400px){
     :root {
         width: 90%;
-    }
-    ul {
-        padding: 0 0.75rem;
+        --padding-variable: 0 0.75rem;
     }
 }
 
@@ -25,9 +21,7 @@
 @media only screen and (min-width: 500px){
     :root {
         width: 87.5%;
-    }
-    ul {
-        padding: 0 1rem;
+        --padding-variable: 0 1rem;
     }
 }
 
@@ -35,21 +29,13 @@
 @media only screen and (min-width: 600px){
     :root {
         width: 85%;
-    }
-    ul {
-        padding: 0 1.5rem;
+        --padding-variable: 0 1rem;
     }
 }
 
 @media only screen and (min-width: 800px){
     :root {
         width: 80%;
-    }
-    ul {
-        padding: 0 1.75rem;
-    }
-    p {
-        padding: 0 0.5rem;
     }
 }
 

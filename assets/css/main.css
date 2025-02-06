@@ -66,17 +66,19 @@
     scrollbar-width: none;
 }
 
+li::marker {
+    content: '- ';
+}
+
+/* fix some jank <br> spam and maintain desired spacing */
+div.post {
+    margin: 1em 0;
+}
+
 h1 { font-size: 2em; font-weight: 500;}
 h2 { font-size: 1.65em; font-weight: 500; }
 h3 { font-size: 1.4em; font-weight: 500; }
 
-h2#posts {
-    margin-bottom: 0;
-}
-
-ul#posts {
-    margin-top: 0;
-}
 /* stuff for the top menu */
 
 /* set display property so header objects line up properly (that rhymes!)*/
