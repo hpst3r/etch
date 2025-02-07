@@ -8,7 +8,7 @@
     --body-line-height: 1.25;
 
     /* mono */
-    --code-font-family: Consolas, monospace;
+    --code-font-family: 'Cascadia Mono', monospace;
     --code-font-size: 0.9rem;
 
     --codeblock-border-width: 0.15rem;
@@ -25,11 +25,11 @@
     --light-anchor-hover-color: #076bdd;
     --light-background-color: #fff;
 
-    --light-code-text-color: var(--light-code-text-color);
+    --light-code-text-color: #000;
     --light-codeblock-background-color: var(--light-background-color);
     --light-codeblock-highlight-color: #e5e5e5;
     --light-codeblock-border-color: #dddddd;
-    --light-codeblock-line-number-color: var(--light-code-text-color); 
+    --light-codeblock-line-number-color: var(--light-code-text-color);
 
     --dark-header-banner-name-a-color: #e0e0e0;
     --dark-header-nav-ul-li-a-color: #cccccc;

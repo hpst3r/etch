@@ -20,7 +20,10 @@
 
 /* mask bottom codeblock border */
 .chroma {
+    border-top-width: 0.2em;
     border-bottom: 0;
+    border-top-left-radius: .4em;
+    border-top-right-radius: .4em;
 }
 
 {{- if not (eq .Site.Params.dark "on") -}}
