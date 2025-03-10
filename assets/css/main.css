@@ -8,7 +8,7 @@
     --body-line-height: 1.25;
 
     /* mono */
-    --code-font-family: 'Cascadia Mono', monospace;
+    --code-font-family: 'JetBrains Mono', monospace;
     --code-font-size: 0.9rem;
 
     --codeblock-border-width: 0.15rem;
