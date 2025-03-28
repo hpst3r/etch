@@ -141,6 +141,8 @@ h6 { color: var(--heading-color); }
 code {
     font-size: var(--code-font-size);
     font-family: var(--code-font-family);
+    background-color: var(--codeblock-background-color);
+    border-radius: .1rem;
 }
 
 .chroma {
