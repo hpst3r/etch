@@ -44,17 +44,11 @@ ul, p, time.post-header {
     :root {
         width: 72.5%;
     }
-    img {
-        max-width: 140%;
-    }
 }
 
 @media only screen and (min-width: 1255px){
     :root {
         width: 65%;
-    }
-    img {
-        max-width: 155%;
     }
 }
 
@@ -62,8 +56,5 @@ ul, p, time.post-header {
 @media only screen and (min-width: 1510px){
     :root {
         width: 1000px;
-    }
-    img {
-        max-width: 165%;
     }
 }
