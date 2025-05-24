@@ -16,14 +16,21 @@
     --codeblock-background-color: var(--dark-codeblock-background-color);
     --codeblock-highlight-color: var(--dark-codeblock-highlight-color);
     --codeblock-border-color: var(--dark-codeblock-border-color);
+
+    --blockquote-background-color: var(--dark-blockquote-background-color);
 }
 
 /* mask bottom codeblock border */
-.chroma {
+.chroma{
     border-top-width: 0.2em;
     border-bottom: 0;
-    border-top-left-radius: .4em;
-    border-top-right-radius: .4em;
+    border-top-left-radius: 0.4em;
+    border-top-right-radius: 0.4em;
+}
+
+blockquote {
+    border-width: 0.2em;
+    border-radius: 0.4em;
 }
 
 {{- if not (eq .Site.Params.dark "on") -}}

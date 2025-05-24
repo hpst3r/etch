@@ -4,7 +4,7 @@
     margin: auto;
     /* non-mono */
     font-family: Inter, Arial, system-ui;
-    font-size: 16px;
+    font-size: 1rem;
     --body-line-height: 1.25;
 
     /* mono */
@@ -25,11 +25,13 @@
     --light-anchor-hover-color: #076bdd;
     --light-background-color: #fff;
 
-    --light-code-text-color: #000;
-    --light-codeblock-background-color: var(--light-background-color);
+    --light-code-text-color: #222222;
+    --light-codeblock-background-color: #fafafa;
     --light-codeblock-highlight-color: #e5e5e5;
     --light-codeblock-border-color: #dddddd;
     --light-codeblock-line-number-color: var(--light-code-text-color);
+
+    --light-blockquote-background-color: #f5f5f5;
 
     --dark-header-banner-name-a-color: #e0e0e0;
     --dark-header-nav-ul-li-a-color: #cccccc;
@@ -46,6 +48,8 @@
     --dark-codeblock-border-color: #2e2e2e;
     --dark-codeblock-line-number-color: var(--dark-code-text-color);
 
+    --dark-blockquote-background-color: var(--dark-codeblock-background-color);
+
     --header-banner-name-a-color: var(--light-header-banner-name-a-color);
     --header-nav-ul-li-a-color: var(--light-header-nav-ul-li-a-color);
 
@@ -59,6 +63,8 @@
     --codeblock-background-color: var(--light-codeblock-background-color);
     --codeblock-highlight-color: var(--light-codeblock-highlight-color);
     --codeblock-border-color: var(--light-codeblock-border-color);
+
+    --blockquote-background-color: var(--light-blockquote-background-color);
 
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -141,6 +147,7 @@ h6 { color: var(--heading-color); }
 code {
     font-size: var(--code-font-size);
     font-family: var(--code-font-family);
+    color: var(--code-text-color);
     background-color: var(--codeblock-background-color);
     border-radius: .1rem;
 }
@@ -163,11 +170,35 @@ table, td, th {
 }
 
 img, figure {
-    display: flex;
-    justify-content: center;
+    display: block;
+    margin: auto;
     padding: .2rem;
-    border-radius: .75rem;
+    border-radius: .7rem;
     max-width: 100%;
+}
+
+blockquote::before, blockquote::after {
+    position: relative;
+    font-size: 1.5rem;
+    top: 0.4rem;
+}
+blockquote::before {
+    content: '“';
+}
+blockquote::after {
+    content: '”';
+}
+
+blockquote {
+    background-color: var(--blockquote-background-color);
+    margin: 0.5rem;
+    padding: 0 0.5rem;
+    border-radius: .1rem;
+}
+
+/* Borders */ blockquote {
+    border-top: var(--codeblock-border-width) var(--codeblock-border-style) var(--codeblock-border-color);
+    border-bottom: var(--codeblock-border-width) var(--codeblock-border-style) var(--codeblock-border-color);
 }
 
 /* syntax highlighting */
