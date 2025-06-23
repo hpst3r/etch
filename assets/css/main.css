@@ -72,9 +72,6 @@
     scrollbar-width: none;
 }
 
-li::marker {
-}
-
 /* fix some jank <br> spam and maintain desired spacing */
 div.post {
     margin: 1em 0;
