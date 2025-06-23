@@ -73,7 +73,6 @@
 }
 
 li::marker {
-    content: '- ';
 }
 
 /* fix some jank <br> spam and maintain desired spacing */
@@ -132,9 +131,14 @@ main#content ul#posts li a:hover {
     color: var(--anchor-hover-color);
 }
 
+/* list items for the header */
 ul-header { padding: 0; }
 
-li { list-style-type: disc; }
+/* nested lists */
+ul ul, ol ol { margin-left: 0.5rem; }
+
+/* add some padding to list items so they don't look cramped */
+li { margin: 0.2rem 0; }
 
 h1,
 h2,
