@@ -35,26 +35,26 @@ ul, p, time.post-header {
 
 @media only screen and (min-width: 800px){
     :root {
-        width: 80%;
+        width: 70%;
     }
 }
 
 /* half a desktop or medium screens */
 @media only screen and (min-width: 1000px){
     :root {
-        width: 72.5%;
+        width: 65%;
     }
 }
 
 @media only screen and (min-width: 1255px){
     :root {
-        width: 65%;
+        width: 55%;
     }
 }
 
 /* fullscreen on a monitor */
 @media only screen and (min-width: 1510px){
     :root {
-        width: 1000px;
+        width: 800px;
     }
 }

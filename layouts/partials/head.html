@@ -9,23 +9,26 @@
         {{ printf `<link rel="%s" type="%s" href="%s" title="%s">` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
     {{ end -}}
 
-    {{ $resources := slice -}}
-
-    {{ $resources = $resources | append (resources.Get "css/main.css") -}}
-
-    {{ $resources = $resources | append (resources.Get "css/width.css") -}}
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
 
+    {{ $resourceFiles := slice "css/main.css" "css/chroma.css" "css/width.css" }}
+
+    {{ $resources := slice -}}
+
+    {{ range $path := $resourceFiles }}
+      {{ $resources = $resources | append (resources.Get $path) }}
+    {{ end }}
+    
     {{ $dark := .Site.Params.dark | default "auto" -}}
     {{ if not (eq $dark "off") -}}
         {{ $resources = $resources | append (resources.Get "css/dark.css" | resources.ExecuteAsTemplate "dark.css" .) -}}
     {{ end -}}
-
+    
     {{ $css := $resources | resources.Concat "css/style.css" | minify }}
-    {{ printf `<link rel="stylesheet" href="%s">` $css.RelPermalink | safeHTML }}
+
+    <link rel="stylesheet" href="{{ $css.RelPermalink }}">
 
     <link rel="canonical" href="{{ .Permalink }}" />
     <title>{{ .Title }}</title>
