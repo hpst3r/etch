@@ -176,10 +176,18 @@ code {
 
 /* table margin, for centering, border, and show only one border */
 table, td, th {
-    margin: auto;
     border: 1px solid;
     border-collapse: collapse;
     padding: .2rem;
+}
+
+.table-wrapper {
+    width: max-content;
+    max-width: 80vw;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    overflow-x: auto;
 }
 
 img, figure {
