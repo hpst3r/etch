@@ -1,60 +1,53 @@
 ul, p, time.post-header {
     padding: var(--padding-variable);
 }
-/* tiny screens, like the Galaxy Fold */
-@media only screen and (min-width: 0px){
-    :root {
-        width: 95%;
-        --padding-variable: 0 0.5rem;
+
+:root {
+    margin: auto;
+}
+
+@media only screen and (min-width: 0px) {
+    body { width: 95%; --padding-variable: 0 0.5rem; }
+}
+@media only screen and (min-width: 400px) {
+    body { width: 92.5%; --padding-variable: 0 0.75rem; }
+}
+@media only screen and (min-width: 500px) {
+    body { width: 90%; --padding-variable: 0 1rem; }
+}
+@media only screen and (min-width: 600px) {
+    body { width: 87.5%; --padding-variable: 0 1rem; }
+}
+@media only screen and (min-width: 800px) {
+    body { width: 85%; }
+}
+@media only screen and (min-width: 1000px) {
+    body { width: 80%; }
+}
+@media only screen and (min-width: 1510px) {
+    body { width: 1200px; }
+}
+
+@media only screen and (min-width: 1300px) and (max-width: 1399px) {
+    body.has-toc {
+        width: 75%;
+        margin-left: 300px;
+        margin-right: auto;
     }
 }
 
-/* begin to increase margin on body content once we have space */
-@media only screen and (min-width: 400px){
-    :root {
-        width: 90%;
-        --padding-variable: 0 0.75rem;
+@media only screen and (min-width: 1400px) and (max-width: 1509px) {
+    body.has-toc {
+        width: 72.5%;
+        margin-left: 300px;
+        margin-right: auto;
     }
 }
 
-/* smooths out transition if the window is rapidly resized */
-@media only screen and (min-width: 500px){
-    :root {
-        width: 87.5%;
-        --padding-variable: 0 1rem;
-    }
-}
-
-/* small screens */
-@media only screen and (min-width: 600px){
-    :root {
-        width: 85%;
-        --padding-variable: 0 1rem;
-    }
-}
-
-@media only screen and (min-width: 800px){
-    :root {
-        width: 70%;
-    }
-}
-
-/* half a desktop or medium screens */
-@media only screen and (min-width: 1000px){
-    :root {
-        width: 65%;
-    }
-}
-
-@media only screen and (min-width: 1255px){
-    :root {
-        width: 55%;
-    }
-}
-
-/* fullscreen on a monitor */
-@media only screen and (min-width: 1510px){
-    :root {
-        width: 800px;
+@media only screen and (min-width: 1510px) and (max-width: 1800px) {
+    body.has-toc {
+        width: 67%;
+        margin-left: 300px;
+        margin-right: auto;
     }
 }

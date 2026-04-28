@@ -12,6 +12,8 @@
         {{- end -}}
         </div>
     </header>
+    {{ partial "toc.html" . }}
     {{- .Content -}}
 </article>
+{{ partial "toc-scroll.html" . }}
 {{ end }}

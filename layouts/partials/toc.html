@@ -1,0 +1,6 @@
+{{- $tocContent := .TableOfContents -}}
+{{- if and (ne (.Params.toc) false) (gt (len $tocContent) 50) -}}
+<aside class="toc">
+    {{- $tocContent -}}
+</aside>
+{{- end -}}

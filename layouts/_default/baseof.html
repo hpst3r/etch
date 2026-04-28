@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="{{ .Site.Language.Lang }}">
     {{- partial "head.html" . -}}
-    <body>
+    <body{{- if and (ne (.Params.toc) false) (gt (len .TableOfContents) 50) }} class="has-toc"{{- end -}}>
         {{- partial "header.html" . -}}
         <main id="content">
         {{- block "main" . }}{{- end }}

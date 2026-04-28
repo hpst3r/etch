@@ -1,0 +1,53 @@
+{{- if and (ne (.Params.toc) false) (gt (len .TableOfContents) 50) -}}
+<script>
+(function () {
+    var toc = document.querySelector('.toc');
+    if (!toc) return;
+
+    /* vertical centering while sticky
+     * position: sticky with top: X only anchors to the top edge.
+     * to center vertically calculate:
+     *   top = (viewportHeight - tocHeight) / 2
+     * clamp to a minimum of 1.5rem so it never goes off-screen top.
+     * re-runs on resize so it stays correct if the window changes.
+     */
+    function centerTocVertically() {
+        // Only apply on wide screens where the sidebar is active
+        if (window.innerWidth < 1300) {
+            toc.style.top = '';
+            return;
+        }
+        var tocHeight = toc.offsetHeight;
+        var viewportHeight = window.innerHeight;
+        var centeredTop = (viewportHeight - tocHeight) / 2;
+        // Clamp: don't go above 24px from top
+        var top = Math.max(24, centeredTop);
+        toc.style.top = top + 'px';
+    }
+
+    centerTocVertically();
+    window.addEventListener('resize', centerTocVertically);
+
+    var links = Array.from(document.querySelectorAll('.toc #TableOfContents a'));
+    if (!links.length) return;
+
+    var headings = Array.from(
+        document.querySelectorAll('h2[id], h3[id], h4[id]')
+    );
+
+    var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+            if (!entry.isIntersecting) return;
+            var id = entry.target.getAttribute('id');
+            links.forEach(function (a) { a.classList.remove('toc-active'); });
+            var active = links.find(function (a) {
+                return a.getAttribute('href') === '#' + id;
+            });
+            if (active) active.classList.add('toc-active');
+        });
+    }, { rootMargin: '0px 0px -65% 0px' });
+
+    headings.forEach(function (h) { observer.observe(h); });
+})();
+</script>
+{{- end -}}
