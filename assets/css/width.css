@@ -25,12 +25,12 @@ ul, p, time.post-header {
     body { width: 80%; }
 }
 @media only screen and (min-width: 1510px) {
-    body { width: 1200px; }
+    body { width: 1000px; }
 }
 
 @media only screen and (min-width: 1300px) and (max-width: 1399px) {
     body.has-toc {
-        width: 75%;
+        width: 70%;
         margin-left: 300px;
         margin-right: auto;
     }
@@ -38,7 +38,7 @@ ul, p, time.post-header {
 
 @media only screen and (min-width: 1400px) and (max-width: 1509px) {
     body.has-toc {
-        width: 72.5%;
+        width: 62.5%;
         margin-left: 300px;
         margin-right: auto;
     }
@@ -46,8 +46,8 @@ ul, p, time.post-header {
 
 @media only screen and (min-width: 1510px) and (max-width: 1800px) {
     body.has-toc {
-        width: 67%;
-        margin-left: 300px;
+        width: 57.5%;
+        margin-left: 350px;
         margin-right: auto;
     }
 }
