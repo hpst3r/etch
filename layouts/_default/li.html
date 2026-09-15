@@ -1,4 +1,11 @@
-<div class="post">
+{{- $tokens := slice -}}
+{{- range .GetTerms "categories" -}}
+    {{- with .RelPermalink -}}
+        {{- $tokens = $tokens | append (replace . " " "%20") -}}
+    {{- end -}}
+{{- end -}}
+{{- $membership := delimit $tokens " " -}}
+<li class="post" data-categories="{{ $membership }}">
     <span><small><time>{{ .Date | time.Format (i18n "posts.date") }}</time></small></span>
     <span><a href="{{ .Permalink }}">{{ .Title }}</a></span>
-</div>
+</li>

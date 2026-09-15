@@ -74,8 +74,8 @@
     scrollbar-width: none;
 }
 
-/* fix some jank <br> spam and maintain desired spacing */
-div.post {
+/* keep post rows compact */
+.post {
     margin: 1em 0;
 }
 
@@ -128,14 +128,75 @@ main#content header#post-header div {
     color: #a7a7a7;
 }
 
-main#content ul#posts {
+/* category filters: plain text controls, not pills */
+.category-filters {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: .25rem 1rem;
+    margin: -.25rem 0 1rem;
+}
+
+.category-filters[hidden] {
+    display: none;
+}
+
+.category-filters button {
+    min-width: 32px;
+    min-height: 32px;
+    margin: 0;
+    padding: .35rem .15rem;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+    color: inherit;
+    background: transparent;
+    font: inherit;
+    font-size: .86rem;
+    line-height: 1.2;
+    cursor: pointer;
+}
+
+.category-filters button:hover {
+    color: var(--heading-color);
+}
+
+.category-filters button:focus-visible {
+    outline: 2px solid var(--anchor-color);
+    outline-offset: 2px;
+}
+
+.category-filters button[aria-pressed="true"] {
+    color: var(--heading-color);
+    font-weight: 500;
+    text-decoration: underline;
+    text-decoration-color: var(--anchor-color);
+    text-decoration-thickness: 1px;
+    text-underline-offset: .25em;
+}
+
+/* accessibility utility: keep content for assistive tech only */
+.visually-hidden {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    margin: -1px !important;
+    padding: 0 !important;
+    border: 0 !important;
+    overflow: hidden !important;
+    clip: rect(0 0 0 0) !important;
+    clip-path: inset(50%) !important;
+    white-space: nowrap !important;
+}
+
+main#content ul.posts-list {
     margin: 0;
     padding: 0;
     list-style: none;
     border-top: 1px solid var(--codeblock-border-color);
 }
 
-main#content ul#posts .post {
+main#content ul.posts-list .post {
     display: grid;
     grid-template-columns: 8.5rem minmax(0, 1fr);
     align-items: baseline;
@@ -146,19 +207,24 @@ main#content ul#posts .post {
     line-height: 1.25;
 }
 
-main#content ul#posts .post time {
+/* filtered-out rows must never be displayed */
+main#content ul.posts-list .post[hidden] {
+    display: none !important;
+}
+
+main#content ul.posts-list .post time {
     color: var(--muted-color);
     font-size: .76rem;
     font-variant-numeric: tabular-nums;
 }
 
-main#content ul#posts .post a {
+main#content ul.posts-list .post a {
     font-size: .96rem;
     line-height: 1.4;
 }
 
 /* make title and date each their own block so spacing is consistent */
-main#content ul#posts .post > span {
+main#content ul.posts-list .post > span {
     display: block;
     margin: 0;
     padding: 0;
@@ -196,7 +262,7 @@ a {
 
 a:hover { text-decoration: underline; }
 
-main#content ul#posts li a:hover {
+main#content ul.posts-list li a:hover {
     color: var(--anchor-hover-color);
 }
 
@@ -411,7 +477,7 @@ main#content header#post-header h2 {
         margin-top: .65rem;
     }
 
-    main#content ul#posts .post {
+    main#content ul.posts-list .post {
         grid-template-columns: 1fr;
         gap: .18rem;
         padding: .8rem 0;
