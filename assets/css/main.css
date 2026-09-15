@@ -4,8 +4,10 @@
     margin: auto;
     /* non-mono */
     font-family: Inter, system-ui;
-    font-size: 1.1rem;
+    font-size: 1rem;
     --body-line-height: 1.6;
+    --content-width: 710px;
+    --muted-color: #707879;
 
     /* mono */
     --code-font-family: monospace;
@@ -82,10 +84,26 @@ h2 { font-size: 1.65em; font-weight: 500; }
 h3 { font-size: 1.4em; font-weight: 500; }
 
 /* stuff for the top menu */
+header#banner {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 1.5rem;
+    padding: 1.35rem 0;
+    border-bottom: 1px solid var(--codeblock-border-color);
+}
 
-/* set display property so header objects line up properly (that rhymes!)*/
-header#banner h2 { display: inline; }
+header#banner h2 {
+    display: inline;
+    margin: 0;
+    font-size: 1.35rem;
+    font-weight: 650;
+    letter-spacing: -.025em;
+}
+
 header#banner nav { display: inline-block; }
+header#banner nav ul { margin: 0; padding: 0; }
+header#banner nav a { font-size: .94rem; }
 
 /* list item settings (the items next to the site name) */
 header#banner nav ul li {
@@ -110,9 +128,33 @@ main#content header#post-header div {
     color: #a7a7a7;
 }
 
-/* post list items - space differently than body text */
+main#content ul#posts {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    border-top: 1px solid var(--codeblock-border-color);
+}
+
 main#content ul#posts .post {
+    display: grid;
+    grid-template-columns: 8.5rem minmax(0, 1fr);
+    align-items: baseline;
+    gap: 1rem;
+    margin: 0;
+    padding: .9rem 0;
+    border-bottom: 1px solid var(--codeblock-border-color);
     line-height: 1.25;
+}
+
+main#content ul#posts .post time {
+    color: var(--muted-color);
+    font-size: .76rem;
+    font-variant-numeric: tabular-nums;
+}
+
+main#content ul#posts .post a {
+    font-size: .96rem;
+    line-height: 1.4;
 }
 
 /* make title and date each their own block so spacing is consistent */
@@ -128,6 +170,23 @@ body {
     margin-right: auto;
     line-height: var(--body-line-height);
     overflow-wrap: break-word;
+}
+
+main#content {
+    width: min(100%, var(--content-width));
+    margin: 2rem auto 6rem;
+}
+
+body.has-toc main#content {
+    margin-top: 1.5rem;
+}
+
+main#content > p:first-child {
+    margin: 0 0 1.25rem;
+}
+
+main#content > h2#posts {
+    margin-top: 0;
 }
 
 a {
@@ -223,54 +282,138 @@ blockquote {
     border-bottom: var(--codeblock-border-width) var(--codeblock-border-style) var(--codeblock-border-color);
 }
 
-.toc { font-size: 0.85rem; }
-
-.toc #TableOfContents a:hover {
-    opacity: 1;
-    text-decoration: underline;
+.post-article {
+    min-width: 0;
+    font-size: 15px;
 }
 
-/* Narrow inline, centered  */
+main#content header#post-header {
+    padding-bottom: 1.65rem;
+    margin-bottom: 2.5rem;
+    border-bottom: 1px solid var(--codeblock-border-color);
+}
+
+main#content header#post-header h2 {
+    margin: 0 0 .65rem;
+    font-size: clamp(1.85rem, 3.25vw, 2.6rem);
+    font-weight: 650;
+    line-height: 1.14;
+    letter-spacing: -.025em;
+}
+
+.post-article h2,
+.post-article h3,
+.post-article h4 {
+    scroll-margin-top: 2rem;
+}
+
 .toc {
-    margin: 1.5em auto 1.5em auto; /* auto left/right = horizontal center */
-    padding: 0.6em 0.8em;
-    max-width: fit-content; /* prevent from stretching to fill full width */
+    width: 100%;
+    margin: 0 0 2rem;
+    padding: 0 0 1rem;
+    overflow: visible;
+    border-top: 0;
+    border-bottom: 1px solid var(--codeblock-border-color);
+    font-size: .78rem;
 }
 
-@media only screen and (min-width: 1300px) {
-    article.post-article {
-        position: relative;
-    }
-
-    .toc {
-        float: left;
-        position: sticky;
-        width: 250px;
-        margin-left: -300px;
-        margin-bottom: 0;
-        max-width: unset;
-        top: 1.5rem;
-        clear: left;
-        max-height: calc(100vh - 3rem);
-        overflow-y: auto;
-        scrollbar-width: none;
-        border-right: 2px solid var(--codeblock-border-color);
-        padding: 0.6em 0.8em;
-    }
+.toc-label {
+    margin: 0 0 .7rem;
+    padding: 0;
+    color: var(--muted-color);
+    font-size: .7rem;
+    letter-spacing: .09em;
+    text-transform: uppercase;
 }
 
-/* inactive heading - dim (JS scroll spy) */
+.toc #TableOfContents ol {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.toc #TableOfContents li {
+    margin: 0;
+}
+
+.toc #TableOfContents ol ol a {
+    padding-left: 1.35rem;
+}
+
 .toc #TableOfContents a {
-    color: var(--anchor-color);
+    display: block;
+    position: relative;
+    padding: .38rem .55rem;
+    color: var(--muted-color);
+    line-height: 1.35;
     text-decoration: none;
-    opacity: 0.75;
-    transition: opacity 0.1s;
 }
 
-/* active heading highlight (JS scroll spy) */
+.toc #TableOfContents a:hover,
+.toc #TableOfContents a:focus-visible {
+    color: var(--heading-color);
+}
+
+.toc #TableOfContents a:focus-visible {
+    outline: 2px solid var(--anchor-color);
+    outline-offset: 2px;
+}
+
+.toc #TableOfContents a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: .46rem;
+    bottom: .46rem;
+    width: 2px;
+    background: transparent;
+}
+
 .toc #TableOfContents a.toc-active {
-    opacity: 1;
-    color: var(--anchor-hover-color);
+    color: var(--heading-color);
     font-weight: 500;
 }
 
+.toc #TableOfContents a.toc-active::after {
+    background: var(--anchor-color);
+}
+
+@media only screen and (min-width: 1280px) {
+    .toc {
+        float: left;
+        position: sticky;
+        top: 2rem;
+        width: 220px;
+        max-height: calc(100vh - 4rem);
+        margin-left: -270px;
+        margin-bottom: 0;
+        padding: 0 1rem 0 0;
+        overflow-x: hidden;
+        overflow-y: auto;
+        border-right: 1px solid var(--codeblock-border-color);
+        border-bottom: 0;
+        scrollbar-width: thin;
+    }
+
+    .toc #TableOfContents a::after {
+        left: auto;
+        right: -1.05rem;
+    }
+}
+
+@media only screen and (max-width: 560px) {
+    header#banner {
+        display: block;
+    }
+
+    header#banner nav {
+        display: block;
+        margin-top: .65rem;
+    }
+
+    main#content ul#posts .post {
+        grid-template-columns: 1fr;
+        gap: .18rem;
+        padding: .8rem 0;
+    }
+}
