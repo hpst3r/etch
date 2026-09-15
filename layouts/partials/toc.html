@@ -1,6 +1,6 @@
-{{- $tocContent := .TableOfContents -}}
-{{- if and (ne (.Params.toc) false) (gt (len $tocContent) 50) -}}
-<aside class="toc">
-    {{- $tocContent -}}
+{{- if partial "has-toc.html" . -}}
+<aside class="toc" aria-label="On this page">
+    <p class="toc-label">On this page</p>
+    {{- .TableOfContents -}}
 </aside>
 {{- end -}}

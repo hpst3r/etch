@@ -1,0 +1,4 @@
+{{- $tocContent := .TableOfContents -}}
+{{- $tocLinks := findRE `<a\s[^>]*href=["']#[^"']+["'][^>]*>` $tocContent -}}
+{{- $showToc := and (ne .Params.toc false) (ge (len $tocLinks) 3) -}}
+{{- return $showToc -}}

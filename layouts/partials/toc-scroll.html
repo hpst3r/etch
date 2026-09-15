@@ -1,53 +1,79 @@
-{{- if and (ne (.Params.toc) false) (gt (len .TableOfContents) 50) -}}
+{{- if partial "has-toc.html" . -}}
 <script>
 (function () {
-    var toc = document.querySelector('.toc');
-    if (!toc) return;
-
-    /* vertical centering while sticky
-     * position: sticky with top: X only anchors to the top edge.
-     * to center vertically calculate:
-     *   top = (viewportHeight - tocHeight) / 2
-     * clamp to a minimum of 1.5rem so it never goes off-screen top.
-     * re-runs on resize so it stays correct if the window changes.
-     */
-    function centerTocVertically() {
-        // Only apply on wide screens where the sidebar is active
-        if (window.innerWidth < 1300) {
-            toc.style.top = '';
-            return;
-        }
-        var tocHeight = toc.offsetHeight;
-        var viewportHeight = window.innerHeight;
-        var centeredTop = (viewportHeight - tocHeight) / 2;
-        // Clamp: don't go above 24px from top
-        var top = Math.max(24, centeredTop);
-        toc.style.top = top + 'px';
-    }
-
-    centerTocVertically();
-    window.addEventListener('resize', centerTocVertically);
-
     var links = Array.from(document.querySelectorAll('.toc #TableOfContents a'));
     if (!links.length) return;
 
-    var headings = Array.from(
-        document.querySelectorAll('h2[id], h3[id], h4[id]')
-    );
+    var pairs = links.map(function (link) {
+        var id;
+        try {
+            id = decodeURIComponent(new URL(link.href, window.location.href).hash.slice(1));
+        } catch (error) {
+            return null;
+        }
+        return { link: link, heading: document.getElementById(id) };
+    }).filter(function (pair) { return pair && pair.heading; });
 
-    var observer = new IntersectionObserver(function (entries) {
-        entries.forEach(function (entry) {
-            if (!entry.isIntersecting) return;
-            var id = entry.target.getAttribute('id');
-            links.forEach(function (a) { a.classList.remove('toc-active'); });
-            var active = links.find(function (a) {
-                return a.getAttribute('href') === '#' + id;
-            });
-            if (active) active.classList.add('toc-active');
+    if (!pairs.length) return;
+
+    var scheduled = false;
+    var currentLink = null;
+
+    function setCurrent(pair) {
+        pairs.forEach(function (item) {
+            var active = item === pair;
+            item.link.classList.toggle('toc-active', active);
+            if (active) {
+                item.link.setAttribute('aria-current', 'location');
+            } else {
+                item.link.removeAttribute('aria-current');
+            }
         });
-    }, { rootMargin: '0px 0px -65% 0px' });
 
-    headings.forEach(function (h) { observer.observe(h); });
+        if (pair.link !== currentLink) {
+            currentLink = pair.link;
+            var toc = pair.link.closest('.toc');
+            if (toc && toc.scrollHeight > toc.clientHeight) {
+                var linkTop = pair.link.offsetTop;
+                var linkBottom = linkTop + pair.link.offsetHeight;
+                if (linkTop < toc.scrollTop) {
+                    toc.scrollTop = linkTop;
+                } else if (linkBottom > toc.scrollTop + toc.clientHeight) {
+                    toc.scrollTop = linkBottom - toc.clientHeight;
+                }
+            }
+        }
+    }
+
+    function updateCurrent() {
+        scheduled = false;
+        var threshold = Math.min(window.innerHeight * 0.3, 160);
+        var current = pairs[0];
+
+        pairs.forEach(function (pair) {
+            if (pair.heading.getBoundingClientRect().top <= threshold) {
+                current = pair;
+            }
+        });
+
+        if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 4) {
+            current = pairs[pairs.length - 1];
+        }
+
+        setCurrent(current);
+    }
+
+    function scheduleUpdate() {
+        if (scheduled) return;
+        scheduled = true;
+        requestAnimationFrame(updateCurrent);
+    }
+
+    window.addEventListener('scroll', scheduleUpdate, { passive: true });
+    window.addEventListener('resize', scheduleUpdate);
+    window.addEventListener('hashchange', scheduleUpdate);
+    window.addEventListener('popstate', scheduleUpdate);
+    scheduleUpdate();
 })();
 </script>
 {{- end -}}

@@ -18,6 +18,7 @@
     --codeblock-border-color: var(--dark-codeblock-border-color);
 
     --blockquote-background-color: var(--dark-blockquote-background-color);
+    --muted-color: #a7a7a7;
 }
 
 /* mask bottom codeblock border */

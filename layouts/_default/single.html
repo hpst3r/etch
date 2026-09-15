@@ -1,5 +1,6 @@
 {{ define "main" }}
-<article>
+<article class="post-article">
+    {{ partial "toc.html" . }}
     <header id="post-header">
         <h2>{{ .Title }}</h2>
         <div>
@@ -12,7 +13,6 @@
         {{- end -}}
         </div>
     </header>
-    {{ partial "toc.html" . }}
     {{- .Content -}}
 </article>
 {{ partial "toc-scroll.html" . }}
