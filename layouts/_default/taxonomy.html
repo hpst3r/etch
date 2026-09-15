@@ -1,6 +1,6 @@
 {{ define "main" }}
-<h3>{{ .Title }}</h3>
-<ul id="posts">
+<h3 id="taxonomy-title">{{ .Title }}</h3>
+<ul class="posts-list" aria-labelledby="taxonomy-title">
 {{- range .Pages }}
     {{ .Render "li" }}
 {{- end }}

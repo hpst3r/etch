@@ -9,6 +9,20 @@ other = "Posts"
 [posts.date]
 other = "2 Jan 2006"
 
+[posts.filter]
+
+[posts.filter.all]
+other = "All"
+
+[posts.filter.label]
+other = "Filter posts by category"
+
+[posts.filter.status]
+other = "Showing {visible} of {total} posts"
+
+[posts.filter.browse]
+other = "Browse categories"
+
 
 [post]
 
